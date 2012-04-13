@@ -1,0 +1,10 @@
+- unless wish.nil?
+  .user_wishlist
+    - if show_name
+      %span.name{:id => "username_#{user.fb_id}"}
+        = link_to "User #{user.fb_id}", "http://facebook.com/profile.php?id=#{user.fb_id}", :class => "link_fb_st"
+    .wish=h wish.wish
+    %div{:id => "wish_comments_#{wish.id}", :style => "margin-top: 20px"}
+    :javascript
+      //var html = jQuery("#user_name_#{user.fb_id}").html();
+      //jQuery("#username_#{user.fb_id}").html(html);

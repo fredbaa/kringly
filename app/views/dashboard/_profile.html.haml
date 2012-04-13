@@ -1,0 +1,30 @@
+#profile_area
+  %h1 Wishlist
+
+  - unless current_user.blank?
+    - nabunotan = Kringle.find_by_manito_id(current_user.id)
+    - unless nabunotan.nil?
+      %h2 Just so you know, someone already got your name. So provide your wish list already.
+
+    %h2
+      What do you want for christmas?
+      - wishlist = Wishlist.find_by_user_id(current_user.id) || Wishlist.new
+    - remote_form_for "wishlist", :url => "/dashboard/save_wish" do |f|
+      %p
+        = f.text_area :wish, :value => wishlist.wish, :id => "wish_field"
+        = f.submit "Wish to the stars!", :id => "submit_wish", :class => "header_boxes"
+      #saved_wishlist
+        = image_tag "check.png"
+        Wishlist saved!
+      - mywish = Wishlist.find_by_user_id(current_user.id)
+      = render :partial => "dashboard/wish", :locals => {:user => current_user, :wish => mywish, :show_name => false}
+
+    %h1 Other members wishes
+
+    - wishlists = Wishlist.find(:all, :conditions => ["user_id != ?", current_user.id])
+  - else
+    - wishlists = Wishlist.all
+
+  - wishlists.each do |wish|
+    - user = wish.user
+    = render :partial => "dashboard/wish", :locals => {:user => user, :wish => wish, :show_name => true}

@@ -1,0 +1,14 @@
+%html{"xmlns:fb" => "http://ogp.me/ns/fb#"}
+  %head
+    %title
+      Sorting Hat
+    = javascript_include_tag "jquery-1.7"
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "main"
+    <link href='http://fonts.googleapis.com/css?family=Petrona|Monofett|Snippet|Paytone+One' rel='stylesheet' type='text/css'>
+  %body
+    = fb_connect_javascript_tag
+    = init_fb_connect "XFBML", :js => :jquery
+    = yield
+    = javascript_include_tag "prototype"

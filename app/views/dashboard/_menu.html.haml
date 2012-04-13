@@ -1,0 +1,10 @@
+#menu_list
+  %a.menu_item_link{:href => "javascript: void(0);", :content => "news"}
+    %span.menu_item.header_boxes.active News
+  - unless current_user.blank?
+    %a{:href => "javascript: void(0);", :content => "randomize"}
+      %span.menu_item.header_boxes My Kringle
+  %a{:href => "javascript: void(0);", :content => "profile"}
+    %span.menu_item.header_boxes Wishlist
+  %a{:href => "javascript: void(0);", :content => "about"}
+    %span.menu_item.header_boxes About

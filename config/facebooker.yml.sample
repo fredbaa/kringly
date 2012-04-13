@@ -1,0 +1,31 @@
+# create new in app in facebook and add the infos here
+# visit at: https://developers.facebook.com/apps
+
+# for development, callback url must be http://127.0.0.1:<port> if you're running in localhost
+development:
+  api_key: <api key>
+  secret_key: <api secret>
+  canvas_page_name: <canvas page name>
+  callback_url: <callback url>
+  pretty_errors: true
+  set_asset_host_to_callback_url: false
+  tunnel:
+    public_host_username:
+    public_host:
+    public_port: 4007
+    local_port: 3000
+    server_alive_interval: 0
+
+production:
+  api_key: <production api key>
+  secret_key: <production api secret>
+  canvas_page_name: <canvas page name>
+  callback_url: <production callback url>
+  set_asset_host_to_callback_url: false
+  tunnel:
+    public_host_username:
+    public_host:
+    public_port: 4007
+    local_port: 3000
+    server_alive_interval: 0
+

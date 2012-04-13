@@ -1,0 +1,5 @@
+log/
+tmp/
+config/appctl.yml
+config/facebooker.ynl
+config/database.yml

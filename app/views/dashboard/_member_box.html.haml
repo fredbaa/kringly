@@ -1,0 +1,12 @@
+- if current_user.nil?
+  #login_area
+    %p#login_info
+      Login via Facebook
+    #login_button= fb_login_button('window.location = "/users/link_user_accounts"', :width => 200)
+#whos_here_info
+  Members:
+  #members_list
+    - @all_users.each do |user|
+      = fb_profile_pic(user.fb_id, :linked => true, :facebook_logo => false, :size => "square")
+
+

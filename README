@@ -1,0 +1,15 @@
+Kringly: A kris kringle app
+
+Kringly is an app to manage your secret santa activity.
+It has a randomizer, and a wishlist area for all the member's wishes.
+It also integrates with Facebook so member can register easily :)
+
+Setting up:
+1. bundle install
+2. bundle exec rake db:create
+   bundle exec rake db:migrate
+3. create config/facebooker.yml from config/facebooker.yml.sample
+   to get api key and secret, go to https://developers.facebook.com/apps
+4. create config/appctl.yml from config/appctl.yml.sample
+5. run script/appctl
+

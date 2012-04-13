@@ -1,0 +1,31 @@
+#news_area
+  %h1 News
+
+  %p
+    Some news here.
+
+  %p
+    %span.whitems What:
+    %b --
+  %p
+    %span.whitems When:
+    %b --
+  %p
+    %span.whitems Activities:
+    %b --
+
+  %p
+    %span.whitems Location:
+    %b --
+
+  %p
+    %span.whitems Gifts:
+    %b --
+
+  %p &nbsp;
+
+  %p#news_comments
+
+:javascript
+  var comments = jQuery("#newscomments").html();
+  jQuery("#news_comments").html(comments);

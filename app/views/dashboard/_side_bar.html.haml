@@ -1,0 +1,17 @@
+#header_box.header_boxes
+  %h1 Hello There!
+  %p Welcome welcome welcome!
+
+#menu_bar
+  = render :partial => "dashboard/menu"
+
+#fb_login_box.header_boxes
+  = render :partial => "dashboard/member_box"
+
+#sub_header_box.header_boxes
+  %p
+    Some info here
+
+  %p
+    - unless current_user.nil?
+      = link_to "Logout", "/sessions/sign_out"

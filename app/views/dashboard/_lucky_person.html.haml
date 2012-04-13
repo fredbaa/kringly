@@ -1,0 +1,12 @@
+- unless kringle.nil?
+  %div#image_for_user &nbsp;
+  #wishlist
+    - wishlist = kringle.manito.wishlist
+    - if wishlist.nil?
+      No wishlist added yet.
+    - else
+      = h wishlist.wish
+
+  :javascript
+    var html = jQuery("#user_image_#{kringle.manito.fb_id}").html();
+    jQuery("#image_for_user").html(html);

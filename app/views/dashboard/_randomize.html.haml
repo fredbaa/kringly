@@ -1,0 +1,22 @@
+- kringle = Kringle.find_by_user_id(current_user.id)
+#randomize_area
+  %h1 My Kringle
+
+  #random_content
+    - if kringle.nil?
+      %p#random_info
+        Click the button to find out who's your kringle!
+        There's no turning back after the magic button has chosen.
+
+      #random_button.header_boxes
+        %p I'm ready when you are!
+
+      #choosing_button.header_boxes{:style => "display: none"}
+        %p choosing...
+
+    #lucky_person
+      = render :partial => "dashboard/lucky_person", :locals => {:kringle => kringle}
+      %br
+
+
+

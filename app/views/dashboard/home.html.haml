@@ -1,0 +1,25 @@
+%table#main_block
+  %tr
+    %td
+      = render :partial => "dashboard/side_bar"
+
+    %td
+      #content_box.header_boxes
+        = image_tag "loader.gif", :id => "content_loader"
+        #content_box_container
+          = render :partial => "dashboard/news"
+
+#cached_images{:style => "display: none"}
+  - unless current_user.nil?
+    - User.all.each do |user|
+      %div{:id => "user_image_#{user.fb_id}"}
+        = fb_profile_pic(user.fb_id, :linked => true, :facebook_logo => false, :size => "normal")
+        %h2{:id => "user_name_#{user.fb_id}"}
+          = fb_name(user.fb_id, :capitalize => true, :first_name_only => true, :linked => false, :use_you => false)
+
+#newscomments{:style => "display: none"}
+  - unless current_user.nil?
+    ="<fb:comments xid='csnewscomments' href='cs.karissayu.com' num_posts='2' width='600'></fb:comments>"
+:javascript
+  var comments = jQuery("#newscomments").html();
+  jQuery("#news_comments").html(comments);
