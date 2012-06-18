@@ -1,5 +1,6 @@
 log/
 tmp/
 config/appctl.yml
-config/facebooker.ynl
+config/facebooker.yml
 config/database.yml
+*.DS_Store
